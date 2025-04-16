@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frases em Francês</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .frase {
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .traducao {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="frase" id="frase">Clique no botão para ver uma frase que nem eu memorizei ainda!</div>
+    <div class="traducao" id="traducao"></div>
+    <button onclick="mostrarFrase()">Nova Frase</button>
+  </div>
+
+  <script>
+    const frases = [
+      { fr: "Bonjour, comment ça va ?", en: "Hello, how are you?" },
+      { fr: "Je m’appelle Weslei.", en: "My name is Weslei" },
+      { fr: "Je suis en train d'apprendre le français.", en: "I'm learning French." },
+      { fr: "Bonne journée!", en: "Have a nice day!" },
+      { fr: "Désolé.", en: "Sorry." },
+      { fr: "À bientôt!", en: "See you soon" },
+      { fr: "J'ai 35 ans.", en: "I'm 35 years old." },
+      { fr: "Très bien, merci!", en: "Fine thanks." },
+      { fr: "Je souis brésilien", en: "I'm brasilian" },
+      { fr: "J'habite á Irlanda.", en: "I live in Ireland." },
+    ];
+
+    function mostrarFrase() {
+      const index = Math.floor(Math.random() * frases.length);
+      const frase = frases[index];
+      document.getElementById('frase').textContent = frase.fr;
+      document.getElementById('traducao').textContent = frase.en;
+    }
+  </script>
+</body>
+</html>
